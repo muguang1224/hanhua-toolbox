@@ -11,9 +11,13 @@ from __future__ import annotations
 import json
 import os
 import struct
+import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT_DIR = os.path.join(os.path.dirname(HERE), "demo", "MyApp")
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, ROOT)
+
+OUT_DIR = os.path.join(ROOT, "demo", "MyApp")
 
 EN = {
     "app": {"name": "Demo App", "tagline": "A tiny demo for the tool"},
@@ -76,6 +80,9 @@ def build_asar(entries: dict[str, bytes]) -> bytes:
 
 
 def main() -> None:
+    from hanhua._console import ensure_utf8_stdout
+
+    ensure_utf8_stdout()
     resources = os.path.join(OUT_DIR, "resources")
     os.makedirs(resources, exist_ok=True)
 

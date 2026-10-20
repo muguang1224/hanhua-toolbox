@@ -12,6 +12,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from hanhua import asar, detect, extract, pack, pipeline, pe
+from hanhua._console import ensure_utf8_stdout
+
+ensure_utf8_stdout()  # Windows 上 stdout 被重定向时不是 UTF-8，打印中文会直接抛异常
 
 WORK = tempfile.mkdtemp(prefix="hanhua-test-")
 FAILS = []

@@ -10,9 +10,11 @@ import argparse
 import sys
 
 from . import pipeline
+from ._console import ensure_utf8_stdout
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdout()
     ap = argparse.ArgumentParser(prog="hanhua", description="汉化工具箱命令行")
     sub = ap.add_subparsers(dest="cmd", required=True)
 

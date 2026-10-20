@@ -12,6 +12,11 @@ NAME = "汉化工具箱"
 def main() -> int:
     root = os.path.dirname(os.path.abspath(__file__))
     os.chdir(root)
+    sys.path.insert(0, root)
+
+    from hanhua._console import ensure_utf8_stdout
+
+    ensure_utf8_stdout()
     py = sys.executable
     print(f"使用 Python：{py}")
 
