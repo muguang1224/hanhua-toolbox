@@ -83,7 +83,14 @@ dist\HanhuaToolbox.exe
 
 单文件、双击即用。`build.bat` 会自动装 `pyinstaller` 和 `tkinterdnd2`。
 
-> PyInstaller 不能跨平台编译，exe 必须在 Windows 上打。也可以在 Actions 里手动触发 **Build exe** 工作流。
+> PyInstaller 不能跨平台编译，exe 必须在 Windows 上打。也可以在 Actions 里手动触发 **Build exe** 工作流，那种运行只留 artifact，不发版。
+
+发版只要打个 tag 推上去，工作流会自动构建、创建 Release、把 exe 挂成附件：
+
+```bash
+git tag v0.1.1
+git push origin v0.1.1
+```
 
 不想打包就直接跑：
 
