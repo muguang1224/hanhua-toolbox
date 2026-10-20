@@ -10,6 +10,12 @@
 
 ---
 
+## 下载
+
+[Releases](https://github.com/muguang1224/hanhua-toolbox/releases) 里有打包好的 `HanhuaToolbox.exe`，单文件、双击即用，不用装 Python。
+
+> 这个 exe 没有代码签名，第一次运行时 Windows SmartScreen 会拦一下，显示「Windows 已保护你的电脑」。点「更多信息」→「仍要运行」即可。介意的话按下面「打包成 exe」自己从源码构建。
+
 ## 先说清楚它不做什么
 
 网上说的"一键全自动汉化"基本不存在。汉化本质是**修改别人已经编译好的程序**，能做到什么程度完全取决于程序怎么写的：有的程序把所有文案放在一个 JSON 里，有的编译进二进制，有的加密加壳。没有一个工具能同时正确处理这几种。
@@ -72,7 +78,7 @@ python -m hanhua.cli analyze demo/MyApp
 Windows 上装好 Python 3.10+（安装时勾选 tcl/tk），双击 `build.bat`：
 
 ```
-dist\汉化工具箱.exe
+dist\HanhuaToolbox.exe
 ```
 
 单文件、双击即用。`build.bat` 会自动装 `pyinstaller` 和 `tkinterdnd2`。

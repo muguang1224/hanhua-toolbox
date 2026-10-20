@@ -6,7 +6,7 @@ import os
 import subprocess
 import sys
 
-NAME = "汉化工具箱"
+NAME = "HanhuaToolbox"  # 输出文件名用 ASCII：中文文件名在部分系统和下载器里会乱码
 
 
 def main() -> int:
