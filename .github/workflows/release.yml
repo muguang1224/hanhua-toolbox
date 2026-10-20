@@ -1,0 +1,26 @@
+name: Build exe
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build single-file exe
+        run: python build.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hanhua-toolbox-exe
+          path: dist/*.exe
+          if-no-files-found: error

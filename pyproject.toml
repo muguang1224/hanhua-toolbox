@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hanhua-toolbox"
+version = "0.1.0"
+description = "拖进一个快捷方式，自动找到程序、提取待翻译文案、生成可回填的汉化包"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "muguang1224" }]
+keywords = ["windows", "localization", "translation", "electron", "asar", "i18n"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Software Development :: Localization",
+]
+
+[project.optional-dependencies]
+gui = ["tkinterdnd2>=0.4"]
+build = ["pyinstaller>=6"]
+
+[project.scripts]
+hanhua = "hanhua.cli:main"
+
+[tool.setuptools]
+packages = ["hanhua"]
