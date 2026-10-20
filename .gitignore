@@ -8,5 +8,6 @@ dist/
 venv/
 demo/
 .pytest_cache/
+assets/icon_preview.png
 .DS_Store
 Thumbs.db

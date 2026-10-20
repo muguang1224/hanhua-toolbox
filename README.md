@@ -141,6 +141,7 @@ hanhua/
   cli.py        命令行
 examples/make_demo.py   造一个假程序用来试
 tests/test_smoke.py     54 项冒烟测试
+assets/make_icon.py     生成程序图标（蓝底白「汉」，7 个尺寸）
 ```
 
 ## 测试

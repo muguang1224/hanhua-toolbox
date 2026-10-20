@@ -37,8 +37,12 @@ def main() -> int:
         "--name", NAME,
         "--collect-all", "tkinterdnd2",
         "--hidden-import", "tkinterdnd2",
-        "run.py",
     ]
+    icon = os.path.join(root, "assets", "icon.ico")
+    if os.path.isfile(icon):
+        args += ["--icon", icon]
+        print(f"使用图标：{icon}")
+    args.append("run.py")
     subprocess.check_call(args)
 
     print(f"\n完成：dist{os.sep}{NAME}.exe")
